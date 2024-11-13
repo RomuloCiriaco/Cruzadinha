@@ -1,4 +1,4 @@
-var special_words = ['CPU', 'ULA', 'REGISTRADORES', 'RAM', 'ROM', 'EPROM', 'FLASH', 'MEMÓRIA DE MASSA', 'DMA', 'CS', 'ADRESS BUS', 'DATA BUS', 'I5', 'I7', 'DUAL CORE', 'QUAD CORE'];
+var special_words = ['CPU', 'ULA', 'REGISTRADORES', 'RAM', 'ROM', 'EPROM', 'FLASH', 'MEMÓRIA-DE-MASSA', 'DMA', 'CS', 'ADDRESS-BUS', 'DATA-BUS', 'I5', 'I7', 'DUAL-CORE', 'QUAD-CORE'];
 
 var questions_list = [
     'O que é considerado o coração da máquina, que trabalha com batimentos cardíacos chamados clock??',
@@ -28,12 +28,12 @@ var questions_list = [
 // barrinha
 var filledCell = [4, 22, 40, 135, 136, 137, 61, 79, 97, 115, 133, 151, 169, 187,
      205, 223, 241, 259, 277, 61, 62, 63, 274, 292, 310, 238, 256, 274, 292, 310,
-      118, 136, 154, 172, 190, 29, 47, 65, 83, 101, 119, 137, 155, 173, 191, 209,
-       227, 245, 263, 281, 299, 205, 206, 207, 314, 315, 272, 273, 273, 274, 275, 276, 277,
+      235, 253, 271, 289, 307, 29, 47, 65, 83, 101, 119, 137, 155, 173, 191, 209,
+       227, 245, 263, 281, 299, 205, 206, 207, 314, 315, 271, 272, 273, 274, 275, 276, 277,
         278, 279, 280, 281, 189, 22, 225, 243, 261, 279, 297, 315, 119, 120, 115,
      116, 39, 40, 41, 42, 43, 44, 45, 46, 47, 5, 23, 41, 59, 77, 95, 113, 131, 149];
 
-var firstIndex= [2, 133, 59, 59, 272, 236, 116, 27, 203, 312, 270, 187, 117, 113, 37, 3];
+
 
 var word = {
 
@@ -113,7 +113,7 @@ var word = {
     },
     word7: {
         letter: special_words[6].split(''),
-        position: [118, 136, 154, 172, 190],
+        position: [235, 253, 271, 289, 307],
         write: function () {
             for (i in word.word7.letter) {
                 var findCell = document.querySelector(`#cell_${word.word7.position[i]}`);
@@ -162,7 +162,7 @@ var word = {
     },
     word11: {
         letter: special_words[10].split(''),
-        position: [272, 273, 273, 274, 275, 276, 277,278, 279, 280, 281,281],
+        position: [ 271 ,272, 273, 274, 275, 276, 277,278, 279, 280, 281],
         write: function () {
             for (i in word.word11.letter) {
                 var findCell = document.querySelector(`#cell_${word.word11.position[i]}`);
@@ -174,7 +174,7 @@ var word = {
     },
     word12: {
         letter: special_words[11].split(''),
-        position: [189, 22, 225, 243, 261, 279, 297, 315, 119, 120],
+        position: [189, 207, 225, 243, 261, 279, 297, 315, 119, 120],
         write: function () {
             for (i in word.word12.letter) {
                 var findCell = document.querySelector(`#cell_${word.word12.position[i]}`);
@@ -186,7 +186,7 @@ var word = {
     },
     word13: {
         letter: special_words[12].split(''),
-        position: [119,, 120],
+        position: [119, 120],
         write: function () {
             for (i in word.word13.letter) {
                 var findCell = document.querySelector(`#cell_${word.word13.position[i]}`);
@@ -247,6 +247,7 @@ function start() {
     div_questions.style.display = 'block';
     div_respostas.style.display = 'block';
     div_information.innerHTML = '';
+    div_information.style.display = 'none';
     renderGrid();
     gameSequence();
 
